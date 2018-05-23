@@ -11,26 +11,14 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source       = { :git => "https://github.com/iSerg/SDK.git", :tag => s.version.to_s }
   s.cocoapods_version = '>= 1.4.0'
-  s.static_framework = true
-  s.prefix_header_file = false
-
-  s.source_files = 'OwlyMetrica.framework/**/*.[mh]'
-
-  s.public_header_files = "OwlyMetrica.framework/Headers/**/*.h"
-
   
-  #s.source_files = 'Firebase/Core/**/*.[mh]'
-  #s.public_header_files = 'Firebase/Core/Public/*.h', 'Firebase/Core/Private/*.h'
-  #s.private_header_files = 'Firebase/Core/Private/*.h', 'Firebase/Core/third_party/*.h'
-  
-  
-  
-  #s.private_header_files = 'Classes/**/*.h'
-  s.frameworks = [
-    'Foundation',
-    'SystemConfiguration',
-    'UIKit'
-  ]
-  #s.requires_arc = true
+  s.default_subspecs = 'Framework'
 
+  s.subspec 'Framework' do |ss|
+        ss.frameworks = 'SystemConfiguration'
+        ss.ios.vendored_frameworks = 'OwlyMetrica.framework'
+        ss.preserve_paths = 'OwlyMetrica.framework'
+        ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
+  end
+  
 end
