@@ -1,0 +1,6 @@
+framework module OwlyMetrica {
+  umbrella header "OwlyMetrica.h"
+
+  export *
+  module * { export * }
+}
