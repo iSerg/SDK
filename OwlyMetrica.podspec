@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/iSerg/SDK.git", :tag => s.version.to_s }
   s.cocoapods_version = '>= 1.4.0'
   
-  s.default_subspecs = 'Framework'
+  s.default_subspecs = 'Core'
 
-  s.subspec 'Framework' do |ss|
+  s.subspec 'Core' do |ss|
         ss.frameworks = 'SystemConfiguration'
         ss.ios.vendored_frameworks = 'OwlyMetrica.framework'
         ss.preserve_paths = 'OwlyMetrica.framework'
