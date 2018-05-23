@@ -9,21 +9,28 @@ Pod::Spec.new do |s|
   s.author             = { "Sergey Rudenko" => "serg.rudenko@owlylabs.com" }
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
-  s.source       = { :git => "https://github.com/iSergR/HexColor.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/iSerg/SDK.git", :tag => s.version.to_s }
   s.cocoapods_version = '>= 1.4.0'
   s.static_framework = true
   s.prefix_header_file = false
 
-  s.source_files = 'OwlyMetrica.framework/Headers/**/*.[mh]'
+  s.source_files = 'OwlyMetrica.framework/**/*.[mh]'
 
   s.public_header_files = "OwlyMetrica.framework/Headers/**/*.h"
 
+  
+  #s.source_files = 'Firebase/Core/**/*.[mh]'
+  #s.public_header_files = 'Firebase/Core/Public/*.h', 'Firebase/Core/Private/*.h'
+  #s.private_header_files = 'Firebase/Core/Private/*.h', 'Firebase/Core/third_party/*.h'
+  
+  
+  
   #s.private_header_files = 'Classes/**/*.h'
   s.frameworks = [
     'Foundation',
     'SystemConfiguration',
     'UIKit'
   ]
-  s.requires_arc = true
+  #s.requires_arc = true
 
 end
