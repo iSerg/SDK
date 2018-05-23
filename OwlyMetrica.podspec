@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.static_framework = true
   s.prefix_header_file = false
 
-  s.source_files = 'Classes/**/*.[mh]'
+  s.source_files = 'OwlyMetrica.framework/Headers/**/*.[mh]'
 
-  s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "OwlyMetrica.framework/Headers/**/*.h"
 
   #s.private_header_files = 'Classes/**/*.h'
   s.frameworks = [
